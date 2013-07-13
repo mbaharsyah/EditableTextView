@@ -23,15 +23,14 @@ public class EditableTextView extends FrameLayout {
 	private boolean editMode;
 	private String text;
 	private float textSize;
+	private String hint;
 
 	private final OnClickListener textViewClickListener = new OnClickListener() {
 		@Override
 		public void onClick(View v) {
 			editMode = true;
 			init();
-			final InputMethodManager imm = (InputMethodManager) getContext()
-					.getSystemService(Context.INPUT_METHOD_SERVICE);
-			imm.showSoftInput(edittext, 0);
+			setKeyboardVisibility(true);
 		}
 	};
 
@@ -42,13 +41,11 @@ public class EditableTextView extends FrameLayout {
 				switch (keyCode) {
 				// if it's back don't save the new text
 				case KeyEvent.KEYCODE_ENTER:
-					text = edittext.getText().toString();
+					setText(edittext.getText().toString());
 				case KeyEvent.KEYCODE_BACK:
-					editMode = false;
+					editMode = edittext.getText().length() <= 0;
 					init();
-					final InputMethodManager imm = (InputMethodManager) getContext()
-							.getSystemService(Context.INPUT_METHOD_SERVICE);
-					imm.hideSoftInputFromWindow(getWindowToken(), 0);
+					setKeyboardVisibility(false);
 					return true;
 				default:
 					break;
@@ -68,6 +65,7 @@ public class EditableTextView extends FrameLayout {
 				false);
 		textSize = a.getDimension(R.styleable.EdittableTextView_textSize,
 				DEFAULT_TEXT_SIZE);
+		hint = a.getString(R.styleable.EdittableTextView_hint);
 
 		a.recycle();
 
@@ -79,18 +77,19 @@ public class EditableTextView extends FrameLayout {
 		edittext = (EditText) findViewById(R.id.edit);
 
 		textView.setOnClickListener(textViewClickListener);
-		edittext.setOnKeyListener(editTextKeyListener);
-
 		textView.setTextSize(textSize);
+
+		edittext.setOnKeyListener(editTextKeyListener);
 		edittext.setTextSize(textSize);
+		edittext.setHint(hint);
 
 		init();
 	}
 
 	private void init() {
 		Log.v(TAG, "Init. editMode = " + editMode);
-		textView.setText(text);
-		edittext.setText(text);
+		textView.setText(getText());
+		edittext.setText(getText());
 		if (editMode) {
 			textView.setVisibility(View.INVISIBLE);
 			edittext.setVisibility(View.VISIBLE);
@@ -105,6 +104,16 @@ public class EditableTextView extends FrameLayout {
 		requestLayout();
 	}
 
+	private void setKeyboardVisibility(boolean visible) {
+		final InputMethodManager imm = (InputMethodManager) getContext()
+				.getSystemService(Context.INPUT_METHOD_SERVICE);
+		if (visible) {
+			imm.showSoftInput(this, 0);
+		} else {
+			imm.hideSoftInputFromWindow(getWindowToken(), 0);
+		}
+	}
+
 	public boolean isEditMode() {
 		return editMode;
 	}
@@ -114,13 +123,29 @@ public class EditableTextView extends FrameLayout {
 		init();
 	}
 
-	public float getTeextSize() {
+	public String getText() {
+		return text;
+	}
+
+	public void setText(String text) {
+		this.text = text;
+	}
+
+	public float getTextSize() {
 		return textSize;
 	}
 
 	public void setTextSize(float textSize) {
 		this.textSize = textSize;
 		init();
+	}
+
+	public String getHint() {
+		return hint;
+	}
+
+	public void setHint(String hint) {
+		this.hint = hint;
 	}
 
 }
