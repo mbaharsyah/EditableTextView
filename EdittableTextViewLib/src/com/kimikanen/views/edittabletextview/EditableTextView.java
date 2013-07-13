@@ -7,11 +7,10 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-
-import com.kimikanen.views.edittabletextviews.R;
 
 public class EditableTextView extends FrameLayout {
 
@@ -30,6 +29,9 @@ public class EditableTextView extends FrameLayout {
 		public void onClick(View v) {
 			editMode = true;
 			init();
+			final InputMethodManager imm = (InputMethodManager) getContext()
+					.getSystemService(Context.INPUT_METHOD_SERVICE);
+			imm.showSoftInput(edittext, 0);
 		}
 	};
 
@@ -44,6 +46,9 @@ public class EditableTextView extends FrameLayout {
 				case KeyEvent.KEYCODE_BACK:
 					editMode = false;
 					init();
+					final InputMethodManager imm = (InputMethodManager) getContext()
+							.getSystemService(Context.INPUT_METHOD_SERVICE);
+					imm.hideSoftInputFromWindow(getWindowToken(), 0);
 					return true;
 				default:
 					break;
