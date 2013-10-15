@@ -16,6 +16,11 @@
         android:layout_height="wrap_content"
         android:hint="@string/default_style" />
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/background_dark" />
+
     <com.kimikanen.views.EditableTextView
         android:id="@+id/etv1"
         android:layout_width="match_parent"
@@ -23,13 +28,23 @@
         android:hint="@string/editmode_false"
         etv:editMode="false" />
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/background_dark" />
+
     <com.kimikanen.views.EditableTextView
         android:id="@+id/etv2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/showbutton_false"
         etv:showButton="false" />
-    
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/background_dark" />
+
     <com.kimikanen.views.EditableTextView
         android:id="@+id/etv3"
         android:layout_width="match_parent"
@@ -38,6 +53,11 @@
         etv:editMode="false"
         etv:showButton="false" />
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/background_dark" />
+
     <com.kimikanen.views.EditableTextView
         android:id="@+id/etv4"
         android:layout_width="match_parent"
@@ -45,11 +65,17 @@
         android:hint="@string/custom_drawables"
         etv:buttonEditDrawable="@android:drawable/ic_menu_add"
         etv:buttonSaveDrawable="@android:drawable/ic_menu_delete" />
-    
-    <Button android:id="@+id/btn5"
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/background_dark" />
+
+    <Button
+        android:id="@+id/btn5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/toggle_below"/>
+        android:text="@string/toggle_below" />
 
     <com.kimikanen.views.EditableTextView
         android:id="@+id/etv5"
@@ -58,5 +84,16 @@
         android:hint="@string/external_control"
         etv:editMode="false"
         etv:showButton="false" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/background_dark" />
+
+    <com.kimikanen.views.EditableTextView
+        android:id="@+id/etv6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/listener_usage" />
 
 </LinearLayout>

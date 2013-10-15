@@ -9,5 +9,7 @@
     <string name="custom_drawables">Custom Drawables</string>
     <string name="toggle_below">Toggle Below Text</string>
     <string name="external_control">External Toggle</string>
+    <string name="listener_usage">Listener Usage</string>
+    <string name="editmode">editMode = %s</string>
 
 </resources>
