@@ -1,7 +1,7 @@
-EdittableTextViewLib
+EditableTextViewLib
 ====================
 
-Edittable TextView Library for Android which makes use of `EditText` and `TextView`.
+An enhanced `EditText` that can be switched between edit mode and read-only mode.
 
 License
 =======
