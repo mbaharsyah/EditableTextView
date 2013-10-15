@@ -38,7 +38,8 @@ public class EditableTextView extends EditText {
 		super(context, attrs);
 
 		final TypedArray a = context.getTheme().obtainStyledAttributes(attrs,
-				R.styleable.EditableTextView, 0, 0);
+				R.styleable.EditableTextView, 0,
+				R.style.editabletextview_default_style);
 		try {
 			editMode = a.getBoolean(R.styleable.EditableTextView_editMode,
 					false);

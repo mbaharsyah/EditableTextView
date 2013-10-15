@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="editabletextview_default_style">
+        <item name="buttonEditDrawable">@android:drawable/ic_menu_edit</item>
+        <item name="buttonSaveDrawable">@android:drawable/ic_menu_save</item>
+        <item name="editMode">true</item>
+        <item name="showButton">true</item>
+    </style>
+</resources>
