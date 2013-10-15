@@ -71,8 +71,9 @@ public class EditableTextView extends EditText {
 		invalidate();
 	}
 
-	public void setOnActionListener(OnEditModeChangedListener onActionListener) {
-		this.onEditModeChangedListener = onActionListener;
+	public void setOnEditModeChangedListener(
+			OnEditModeChangedListener onEditModeChangedListener) {
+		this.onEditModeChangedListener = onEditModeChangedListener;
 	}
 
 	private void refreshState() {
