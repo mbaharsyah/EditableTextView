@@ -7,5 +7,7 @@
     <string name="showbutton_false">showButton = false</string>
     <string name="editmode_false_showbutton_false">editMode = false. showButton = false</string>
     <string name="custom_drawables">Custom Drawables</string>
+    <string name="toggle_below">Toggle Below Text</string>
+    <string name="external_control">External Toggle</string>
 
 </resources>
