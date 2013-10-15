@@ -32,7 +32,7 @@ public class EditableTextView extends EditText {
 	private final KeyListener keyListener;
 
 	private boolean editMode;
-	private OnActionListener onActionListener;
+	private OnEditModeChangedListener onEditModeChangedListener;
 
 	public EditableTextView(Context context, AttributeSet attrs) {
 		super(context, attrs);
@@ -71,8 +71,8 @@ public class EditableTextView extends EditText {
 		invalidate();
 	}
 
-	public void setOnActionListener(OnActionListener onActionListener) {
-		this.onActionListener = onActionListener;
+	public void setOnActionListener(OnEditModeChangedListener onActionListener) {
+		this.onEditModeChangedListener = onActionListener;
 	}
 
 	private void refreshState() {
@@ -107,19 +107,17 @@ public class EditableTextView extends EditText {
 					x += extraTapArea;
 				}
 
-				if (y <= 0)
+				if (y <= 0) {
 					y = actionY;
+				}
 
 				if (bounds.contains(x, y)) {
 					setEditMode(!editMode);
 					event.setAction(MotionEvent.ACTION_CANCEL);
 
-					if (onActionListener != null) {
-						if (editMode) {
-							onActionListener.onEditAction();
-						} else {
-							onActionListener.onSaveAction();
-						}
+					if (onEditModeChangedListener != null) {
+						onEditModeChangedListener.onEditModeChanged(this,
+								editMode);
 					}
 					return true;
 				}
@@ -128,9 +126,8 @@ public class EditableTextView extends EditText {
 		return super.onTouchEvent(event);
 	}
 
-	public interface OnActionListener {
-		public void onSaveAction();
+	public interface OnEditModeChangedListener {
+		public void onEditModeChanged(EditableTextView view, boolean isEditMode);
 
-		public void onEditAction();
 	}
 }
