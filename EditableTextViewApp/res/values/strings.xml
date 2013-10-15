@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">EditableTextViewTest</string>
+    <string name="default_style">Default Style</string>
+    <string name="editmode_false">editMode = false</string>
+    <string name="showbutton_false">showButton = false</string>
+    <string name="editmode_false_showbutton_false">editMode = false. showButton = false</string>
+    <string name="custom_drawables">Custom Drawables</string>
+
+</resources>
