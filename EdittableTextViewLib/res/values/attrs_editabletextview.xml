@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="EditableTextView">
+        <attr name="buttonEditDrawable" format="integer" />
+        <attr name="buttonSaveDrawable" format="integer" />
+        <attr name="editMode" format="boolean" />
+        <attr name="showButton" format="boolean" />
+    </declare-styleable>
+
+</resources>
