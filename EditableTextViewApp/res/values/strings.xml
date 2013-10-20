@@ -11,5 +11,6 @@
     <string name="external_control">External Toggle</string>
     <string name="listener_usage">Listener Usage</string>
     <string name="editmode">editMode = %s</string>
+    <string name="no_background_on_view_mode">no background on view mode</string>
 
 </resources>

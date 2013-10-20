@@ -1,99 +1,116 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:etv="http://schemas.android.com/apk/res/com.kimikanen.editabletextviewtest"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".MainActivity" >
+    android:layout_height="match_parent" >
 
-    <com.kimikanen.views.EditableTextView
-        android:id="@+id/etv0"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/default_style" />
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        tools:context=".MainActivity" >
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/background_dark" />
+        <com.kimikanen.views.EditableTextView
+            android:id="@+id/etv0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/default_style" />
 
-    <com.kimikanen.views.EditableTextView
-        android:id="@+id/etv1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/editmode_false"
-        etv:editMode="false" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/background_dark" />
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/background_dark" />
+        <com.kimikanen.views.EditableTextView
+            android:id="@+id/etv1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/editmode_false"
+            etv:editMode="false" />
 
-    <com.kimikanen.views.EditableTextView
-        android:id="@+id/etv2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/showbutton_false"
-        etv:showButton="false" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/background_dark" />
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/background_dark" />
+        <com.kimikanen.views.EditableTextView
+            android:id="@+id/etv2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/showbutton_false"
+            etv:showButton="false" />
 
-    <com.kimikanen.views.EditableTextView
-        android:id="@+id/etv3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/editmode_false_showbutton_false"
-        etv:editMode="false"
-        etv:showButton="false" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/background_dark" />
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/background_dark" />
+        <com.kimikanen.views.EditableTextView
+            android:id="@+id/etv3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/editmode_false_showbutton_false"
+            etv:editMode="false"
+            etv:showButton="false" />
 
-    <com.kimikanen.views.EditableTextView
-        android:id="@+id/etv4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/custom_drawables"
-        etv:buttonEditDrawable="@android:drawable/ic_menu_add"
-        etv:buttonSaveDrawable="@android:drawable/ic_menu_delete" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/background_dark" />
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/background_dark" />
+        <com.kimikanen.views.EditableTextView
+            android:id="@+id/etv4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/custom_drawables"
+            etv:buttonEditDrawable="@android:drawable/ic_menu_add"
+            etv:buttonSaveDrawable="@android:drawable/ic_menu_delete" />
 
-    <Button
-        android:id="@+id/btn5"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/toggle_below" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/background_dark" />
 
-    <com.kimikanen.views.EditableTextView
-        android:id="@+id/etv5"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/external_control"
-        etv:editMode="false"
-        etv:showButton="false" />
+        <Button
+            android:id="@+id/btn5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/toggle_below" />
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/background_dark" />
+        <com.kimikanen.views.EditableTextView
+            android:id="@+id/etv5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/external_control"
+            etv:editMode="false"
+            etv:showButton="false" />
 
-    <com.kimikanen.views.EditableTextView
-        android:id="@+id/etv6"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/listener_usage" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/background_dark" />
 
-</LinearLayout>
+        <com.kimikanen.views.EditableTextView
+            android:id="@+id/etv6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/listener_usage" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/background_dark" />
+
+        <com.kimikanen.views.EditableTextView
+            android:id="@+id/etv7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/no_background_on_view_mode"
+            etv:showBackgroundOnViewMode="false" />
+    </LinearLayout>
+
+</ScrollView>
