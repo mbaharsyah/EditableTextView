@@ -26,6 +26,7 @@ import android.widget.EditText;
 public class EditableTextView extends EditText {
 
 	private final boolean showButton;
+	private final boolean showBackgroundOnViewMode;
 	private final Drawable editDrawable;
 	private final Drawable saveDrawable;
 	private final Drawable backgroundDrawable;
@@ -43,6 +44,10 @@ public class EditableTextView extends EditText {
 		try {
 			editMode = a.getBoolean(R.styleable.EditableTextView_editMode,
 					false);
+			showBackgroundOnViewMode = a
+					.getBoolean(
+							R.styleable.EditableTextView_showBackgroundOnViewMode,
+							true);
 			showButton = a.getBoolean(R.styleable.EditableTextView_showButton,
 					true);
 			editDrawable = a
@@ -78,7 +83,9 @@ public class EditableTextView extends EditText {
 
 	private void refreshState() {
 		setKeyListener(editMode ? keyListener : null);
-		setBackgroundDrawable(editMode ? backgroundDrawable : null);
+		if (!showBackgroundOnViewMode) {
+			setBackgroundDrawable(editMode ? backgroundDrawable : null);
+		}
 		setCursorVisible(editMode);
 		if (showButton) {
 			setCompoundDrawablesWithIntrinsicBounds(null, null,
